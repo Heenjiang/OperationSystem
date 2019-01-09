@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schedule.ScheduleController">
+	<children>
+		<TableView fx:id="table_pool" layoutX="20.0" layoutY="328.0" prefHeight="200.0" prefWidth="476.0" />
+		<Label layoutX="90.0" layoutY="293.0" text="pool queue" />
+		<TableView fx:id="table_ready" layoutX="14.0" layoutY="76.0" prefHeight="200.0" prefWidth="483.0" />
+		<Label layoutX="90.0" layoutY="50.0" text="ready queue" />
+		<Label layoutX="822.0" layoutY="54.0" text="CPU" />
+		<ImageView fx:id="iv_cpu1" fitHeight="100.0" fitWidth="100.0" layoutX="779.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+		<ProgressBar fx:id="pb_cpu1_1" layoutX="501.0" layoutY="148.0" prefWidth="200.0" progress="0.0" />
+		<ImageView fx:id="iv_cpu2" fitHeight="100.0" fitWidth="100.0" layoutX="779.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true" />
+		<ProgressBar fx:id="pb_cpu2_1" layoutX="501.0" layoutY="401.0" prefWidth="200.0" progress="0.0" />
+		<Label layoutX="514.0" layoutY="54.0" text="Process scheduling" />
+		<ProgressBar fx:id="pb_cpu1_2" layoutX="501.0" layoutY="194.0" prefWidth="200.0" progress="0.0" />
+		<ProgressBar fx:id="pb_cpu2_2" layoutX="501.0" layoutY="446.0" prefWidth="200.0" progress="0.0" />
+		<Label fx:id="lb_cpu1_1" layoutX="704.0" layoutY="150.0" text="0" />
+		<Label layoutX="739.0" layoutY="150.0" text="s" />
+		<Label layoutX="739.0" layoutY="196.0" text="s" />
+		<Label fx:id="lb_cpu1_2" layoutX="704.0" layoutY="196.0" text="0" />
+		<Label layoutX="739.0" layoutY="403.0" text="s" />
+		<Label fx:id="lb_cpu2_1" layoutX="704.0" layoutY="403.0" text="0" />
+		<Label layoutX="739.0" layoutY="448.0" text="s" />
+		<Label fx:id="lb_cpu2_2" layoutX="704.0" layoutY="448.0" text="0" />
+		<Label layoutX="679.0" layoutY="54.0" text="excuteing time" />
+		<HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="555.0" prefHeight="72.0" prefWidth="1000.0" spacing="20.0">
+			<children>
+				<TextField fx:id="tf_proName" prefHeight="30.0" prefWidth="178.0" promptText="进程名，如P_1000" text="Process name( ex: P_100)" />
+				<TextField fx:id="tf_proRuntime" prefHeight="25.0" prefWidth="125.0" promptText="运行时间，单位秒" text="Run time(s)" />
+				<TextField fx:id="tf_proPriority" prefHeight="25.0" prefWidth="125.0" promptText="进程优先权" text="priority" />
+				<TextField fx:id="tf_proMemNeeded" prefHeight="25.0" prefWidth="125.0" promptText="进程所需主存大小" text="memory size" />
+				<Button fx:id="bt_addProcess" mnemonicParsing="false" onMouseClicked="#addProButtonAction" prefHeight="25.0" prefWidth="75.0" text="Add" />
+				<ComboBox fx:id="cb_selectMethod" prefHeight="36.0" prefWidth="187.0" promptText="choose algorithm" />
+				<Button fx:id="bt_startSchedule" mnemonicParsing="false" onMouseClicked="#startScheduleButtonClicked" text="Random" />
+			</children>
+			<padding>
+				<Insets left="10.0" right="10.0" />
+			</padding>
+		</HBox>
+		<Label layoutX="912.0" layoutY="54.0" text="Memory" />
+		<Pane layoutX="921.0" layoutY="117.0" prefHeight="400.0" prefWidth="64.0">
+			<children>
+				<Canvas id="canvas" fx:id="canvas" height="400.0" width="64.0" />
+			</children>
+		</Pane>
+	</children>
+</Pane>
